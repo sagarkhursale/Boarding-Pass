@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.sagar.boardingpass.databinding.ActivityMainBinding;
+import com.sagar.boardingpass.utilities.FakeDataUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -12,8 +13,8 @@ import java.util.concurrent.TimeUnit;
 
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding mBinding;
 
+    private ActivityMainBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
+        BoardingPassInfo fakeBoardingInfo = FakeDataUtils.generateFakeBoardingPassInfo();
+
+        displayBoardingPassInfo(fakeBoardingInfo);
+
+        // end
     }
 
 
